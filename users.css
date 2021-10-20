@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+   
+}
+
+.max-width{
+    padding: 0;
+    margin: auto;
+    max-width: 1600;
+}
+#navbar{
+    position: sticky;
+    top: 0px;
+}
+.logo{
+    padding-left: 30px;
+  
+}
+.menu{
+  padding-top: 15px;
+  padding-right: 30px;
+  
+}
+
+
+.my-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3%;
+    color: white;
+}
+.my-info a{
+    color: rgb(2, 138, 25); 
+    font-size: 23px;
+
+}
+
+
+.container{
+    width: 100%;
+    padding-top: 20px;
+    color: white;
+    background-color: black;
+    text-align: center;
+   
+   
+}
+.container h2{
+    font-size: 50px;
+    padding-bottom:2%;
+}
+.table-content{
+    background-color: rgb(36, 31, 31);
+    width: 100%;
+    margin-top: 25px;
+}
+.table .table-content thead tr{
+    background:rgb(2, 138, 25);
+    font-size: 23px;
+    color: #fff;
+}
+.table .table-content td,
+.table .table-content th {
+    padding :25px 15px;
+    font-size: 23px;
+    border: 1px solid grey;
+   
+}
+.table .table-content thead tr th {
+    padding-right: 34px;
+    font-size: 23px;
+}
+.table .table-content tbody .btn,
+.menu a .btn{
+    padding: 8px 12px;
+    font-size: 18px;
+    color: white;
+    background:rgb(2, 138, 25);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.table .table-content tbody .btn:hover{
+    color: black;
+ background-color: grey;
+}
+.menu a .btn{
+background-color: hsl(0, 98%, 50%);
+}
+
+.menu a .btn:hover{
+ color: black;
+ background-color: grey;
+ font-size: 20px;
+}
+
+
+
+@media(max-width:1050px){
+    .my-info h4{
+        font-size: 23px;
+    }
+    .my-info a{
+        font-size: 18px;
+    }
+    .container h2{
+        font-size: 45px;
+    }
+    .table-content{
+        width: min-content;
+    }
+    .table .table-content thead tr{
+        font-size: 19px;
+    }
+    .table .table-content td,
+    .table .table-content th {
+        font-size: 18px;
+    }
+    .table .table-content tbody .btn{
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: 500;
+}
+}
+@media(max-width:740px){
+    .container h2{
+        font-size: 40px;
+    }
+}

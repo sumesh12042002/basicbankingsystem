@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mooney Transfer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo"><a href="#">Public Union <span>Bank</span></a></div>
+        <ul class="menu">
+            <li><a href="index.html">Back</a></li>
+            <a href="#" class="btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Send money</button></a>
+        </ul>
+    </nav>
+    <div class="background" style="background-color: black;">
+        <div class="max-width my-info">
+            <h3>Name:Sumesh Kumar Upadhyay</h3>
+            <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All
+                Transactions</a>
+            <h4>Net Bank Balance: Rs.<span id="myAccountBalance">100000</span></h4>
+        </div>
+
+        <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <input type="text" id="enterName" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Rs.</span>
+                                </div>
+                                <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol id="transaction-history-body">
+
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container max-width">
+            <h2>Our Customers</h2>
+            <div class="table">
+                <table class="table-content">
+                    <thead>
+                        <tr>
+                            <th style="color: white;"> Account No.</th>
+                            <th style="color: white;">Name</th>
+                            <th style="color: white;">E-mail</th>
+                            <th style="color: white;">Bank Balance(in Rs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9693145</td>
+                            <td>Puja</td>
+                            <td>puja221@gmail.com</td>
+                            <td>
+                                <p id="puja221BankBalance">3350</p>
+                            </td>
+                            <td>
+                                <a href="#" class="btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9693278</td>
+                            <td>Harshit</td>
+                            <td>harsh338@gmail.com</td>
+                            <td>
+                                <p id="harsh338BankBalance">2300</p>
+                            </td>
+                            <td>
+                                <a href="#" class="btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9692390</td>
+                            <td>Raju</td>
+                            <td>raju2009@gmail.com</td>
+                            <td>
+                                <p id="raju2009BankBalance">8700</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9693476</td>
+                            <td>Purav</td>
+                            <td>purav56@gmail.com</td>
+                            <td>
+                                <p id="purav56BankBalance">5003</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9694665</td>
+                            <td>Kartik</td>
+                            <td>kartiku44@gmail.com</td>
+                            <td>
+                                <p id="kartiku44BankBalance">6000</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9695678</td>
+                            <td>Shoumya</td>
+                            <td>shoumya110@gmail.com</td>
+                            <td>
+                                <p id="shoumya110BankBalance">2300</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9778847</td>
+                            <td>Dheer</td>
+                            <td>dheer77@gmail.com</td>
+                            <td>
+                                <p id="dheer77BankBalance">4600</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9886108</td>
+                            <td>Akshay Raj</td>
+                            <td>rajaki191@gmail.com</td>
+                            <td>
+                                <p id="rajaki191BankBalance">2603</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9693459</td>
+                            <td>Aarti</td>
+                            <td>aarti231@gmail.com</td>
+                            <td>
+                                <p id="aarti231BankBalance">6500</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9693107</td>
+                            <td>Savitri</td>
+                            <td>savitri9702@gmail.com</td>
+                            <td>
+                                <p id="savitri9702BankBalance">7350</p>
+                            </td>
+                            <td>
+                                <a href="#" class=" btn-info" data-toggle="modal" data-target="#sendMoney"> <button type="button" class="btn">Transfer money</button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-left">
+            <div>Copyright &copy;2021.A project by <b> Sumesh Kumar Upadhyay </b></div>
+            <span>Chairman of Public Union Bank</span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+</body>
+
+</html>
